@@ -33,11 +33,10 @@ int checkForWinner(char playground[9], char player)
         {
             char gameField = playground[j];
             char winField = winStates[i][j];
-            if ((winField == 'A') && (gameField != player))
+            if ((winField == 'A') && (gameField == player))
             {
-                break;
+                matchCounter++;
             }
-            matchCounter++;
         }
         if (matchCounter == 3)
         {

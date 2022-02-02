@@ -24,7 +24,7 @@ int main()
 
     printPlayground(playground);
     int winner = checkForWinner(playground, 'X');
-    printf("Winner? %d", winner);
+    printf("Winner? %d\n", winner);
 
     // determine the user input and than which role to use
     determineRole();
