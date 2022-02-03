@@ -1,4 +1,4 @@
-CC = gcc -Wall
+CC = gcc -Wall -pthread
 ObjectFiles = main.o communicator.o logic.o
 Program = game
 
