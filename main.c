@@ -8,10 +8,40 @@
 
 void determineRole();
 
+/**
+ * Variable for the application status
+ */
 int run = 1;
+
+/**
+ * Variable for the role of the instance
+ */
 char role = 'c';
-char hostRole = 'h';
-char clientRole = 'c';
+
+/**
+ * Constant for the char definition of the host role
+ */
+const char hostRole = 'h';
+
+/**
+ * Constant for the sign definition of the host
+ */
+const char hostSign = 'X';
+
+/**
+ * Constant for the char definition of the client role
+ */
+const char clientRole = 'c';
+
+/**
+ * Constant for the sign definition of the client
+ */
+const char clientSign = 'O';
+
+/**
+ * Variable for the current playground
+ */
+char playground[9] = {'1', '2', '3', '4', '5', '6', '7', '8', '9'};
 
 /**
  * Program entry point
@@ -20,24 +50,26 @@ char clientRole = 'c';
  */
 int main()
 {
-    char playground[9] = {'X', 'X', 'X', '4', '5', '6', '7', '8', '9'};
-
-    printPlayground(playground);
-    int winner = checkForWinner(playground, 'X');
-    printf("Winner? %d\n", winner);
-
+    
     // determine the user input and than which role to use
     determineRole();
     if (role == hostRole)
     {
+        // start the server behaviour
         server();
     }
     else
     {
+        // start the client behaviour
         client();
+        printPlayground(playground);
+        setSign(clientSign);
     }
 
-    inputListener();
+    // block the main thread so the process won't finish too early
+    while(run){};
+    
+
 
     return 0;
 }
@@ -49,7 +81,7 @@ int main()
  */
 void determineRole()
 {
-    printf("Info: Welcome to the game. Please choose your role (h)ost or (c)lient:\n");
+    printf("Willkommen bie Tic Tac Toe. Bitte wähle eine Rolle: (h)ost oder (c)lient:\n");
     scanf("%c", &role);
 
     if ((role == hostRole) && (role == clientRole))
