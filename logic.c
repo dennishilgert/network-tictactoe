@@ -105,6 +105,8 @@ int checkForWinner(char playground[9], char sign)
             
             if ((sign == hostSign) && (role == hostRole)) {
                 printf(TEXT_BOLD ANSI_COLOR_GREEN "Du hast gewonnen!\n" ANSI_COLOR_RESET TEXT_RESET);
+            } else if ((sign == clientSign) && (role == clientRole)) {
+                printf(TEXT_BOLD ANSI_COLOR_GREEN "Du hast gewonnen!\n" ANSI_COLOR_RESET TEXT_RESET);
             } else {
                 if (role == hostRole) {
                     printf("\n" ANSI_COLOR_RED "Spieler " TEXT_BOLD SIGN_COLOR_CLIENT "%c" ANSI_COLOR_RESET TEXT_RESET ANSI_COLOR_RED " hat gewonnen.\n", sign);
