@@ -1,6 +1,8 @@
 # Vorlesung Programmieren 1
 ## Anwendungsprojekt Tic Tac Toe über das Netzwerk - Jonas Reif und Dennis Hilgert
 
+### Das Programm ist für UNIX-Systeme optimiert. Andere Arten von Betriebssystemen werden nicht unterstützt.
+
 ## Expose':
 
 ### Aufgabenbeschreibung und Funktionsumfang:
