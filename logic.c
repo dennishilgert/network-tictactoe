@@ -193,14 +193,12 @@ void updateGamestate(char buffer[1024], char sign) {
  */
 int analysePlayground() {
     int result = 0;
-    if (checkForDraw(playground) == 1) {
+    if (checkForWinner(playground, hostSign) == 1) {
         result = 1;
-    } else {
-        if (checkForWinner(playground, hostSign) == 1) {
-            result = 1;
-        } else if (checkForWinner(playground, clientSign) == 1) {
-            result = 1;
-        }
+    } else if (checkForWinner(playground, clientSign) == 1) {
+        result = 1;
+    } else if (checkForDraw(playground) == 1) {
+        result = 1;
     }
     return result;
 }
